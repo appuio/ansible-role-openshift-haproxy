@@ -2,7 +2,7 @@ OpenShift HAProxy Role
 ======================
 
 This Ansible role customizes OpenShift HAProxy routers by modifying their DeploymentConfigs to run scripts before
-the routers start. This role designed to be used by other roles and doesn't provide any scripts itself.
+the routers start. This role is designed to be used by other roles and doesn't provide any scripts itself.
 Typically these pre-start scripts patch the routers's config template.
 
 Requirements
@@ -17,10 +17,10 @@ One of:
 Role Variables
 --------------
 
-| Name             | Default value    | Description                                    |
-|------------------|------------------|------------------------------------------------|
-| routers          | None (Required)  | List of router DeploymentConfigs to configure  |
-| prestart_scripts | None (Required)  | Dictionary of prestart files to add to routers |
+| Name             | Default value    | Description                                       |
+|------------------|------------------|---------------------------------------------------|
+| routers          | None (Required)  | List of router DeploymentConfigs to configure     |
+| prestart_scripts | None (Required)  | Dictionary of pre-start scripts to add to routers |
 
 Dependencies
 ------------
