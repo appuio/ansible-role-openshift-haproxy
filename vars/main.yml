@@ -1,2 +1,8 @@
 ---
 prestart_dir: /var/lib/haproxy/prestart.d/
+prestart_env:
+- name: PRESTART_DIR
+  value: "{{ prestart_dir }}"
+- name: TEMPLATE_FILE
+  value: /tmp/haproxy-config.template
+
