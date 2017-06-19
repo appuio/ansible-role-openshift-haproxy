@@ -35,11 +35,7 @@
               command:
               - /usr/bin/prestart.sh
               - /usr/bin/openshift-router
-              env:
-              - name: PRESTART_DIR
-                value: "{{ prestart_dir }}"
-              - name: TEMPLATE_FILE
-                value: /tmp/haproxy-config.template
+              env: "{{ prestart_env + env }}"
               volumeMounts:
               - name: prestart-entrypoint
                 mountPath: /usr/bin/prestart.sh

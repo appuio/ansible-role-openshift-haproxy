@@ -17,10 +17,11 @@ One of:
 Role Variables
 --------------
 
-| Name             | Default value    | Description                                       |
-|------------------|------------------|---------------------------------------------------|
-| routers          | None (Required)  | List of router DeploymentConfigs to configure     |
-| prestart_scripts | None (Required)  | Dictionary of pre-start scripts to add to routers |
+| Name             | Default value    | Description                                                                                                    |
+|------------------|------------------|----------------------------------------------------------------------------------------------------------------|
+| routers          | None (Required)  | List of router DeploymentConfigs to configure                                                                  |
+| prestart_scripts | None (Required)  | Dictionary of pre-start scripts to add to routers                                                              |
+| env              | []               | List of dicts with `name` and `value` keys containing additional environment variables to configure on routers |
 
 Dependencies
 ------------
@@ -34,13 +35,14 @@ Example Usage
 
     dependencies:
     - src: git+https://github.com/appuio/ansible-role-openshift-haproxy
-      version: v1.0.0
+      version: v1.1.0
       prestart_scripts:
         patch-ipv6.sh: "{{ lookup('file', 'files/patch-ipv6.sh') }}"
 
 Also see:
 
 * <https://github.com/appuio/ansible-role-openshift-haproxy-ipv6>
+* <https://github.com/appuio/ansible-role-openshift-haproxy-letsencrypt>
 
 License
 -------
