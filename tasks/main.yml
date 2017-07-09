@@ -3,6 +3,7 @@
   openshift_resource:
     namespace: default
     patch:
+      apiVersion: v1
       kind: ConfigMap
       metadata:
         name: prestart-entrypoint
@@ -14,6 +15,7 @@
   openshift_resource:
     namespace: default
     patch:
+      apiVersion: v1
       kind: ConfigMap
       metadata:
         name: prestart-scripts
