@@ -60,7 +60,7 @@
   register: deploymentconfig
 
 - name: Redeploy haproxy to load updated config maps
-  shell: "oc rollout latest {{ item.item }} && oc rollout status dc {{ item.item }}"
+  shell: "oc rollout -n default latest {{ item.item }} && oc rollout -n default status dc {{ item.item }}"
   when: (entrypoint_configmap.changed or prestart_configmap.changed) and not item.changed
   with_items: "{{ deploymentconfig.results }}"
   no_log: True
