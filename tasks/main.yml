@@ -1,4 +1,9 @@
 ---
+- name: Load ansible-module-openshift
+  include_role:
+    name: vendor/ansible-module-openshift
+    private: true
+
 - name: Create prestart entrypoint ConfigMap
   openshift_resource:
     namespace: default
