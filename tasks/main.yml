@@ -46,7 +46,7 @@
               volumeMounts:
               - name: prestart-entrypoint
                 mountPath: /usr/bin/prestart.sh
-                subPath: prestart.sh
+                subPath: ..data/prestart.sh
               - name: prestart-scripts
                 mountPath: "{{ prestart_dir }}"
             volumes:
